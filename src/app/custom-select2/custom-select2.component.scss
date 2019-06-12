@@ -1,0 +1,250 @@
+.select-wrapper-box {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    z-index: 2147483647 !important;
+    .cus-select-wrapper {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+        // height: 80vh;
+        flex-direction: column;
+        .cus-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: black;
+            opacity: 0.7;
+            z-index: 0;
+            min-height: 100vh;
+        }
+        .list-container {
+            background: white;
+            z-index: 1;
+            position: relative;
+            width: 85%;
+            .search-box {
+                padding: 10px;
+                background-color: #FFFFFF;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                #searchText {
+                    width: 80%;
+                    padding: 10px 24px;
+                    font-size: 16px;
+                    border: none;
+                    outline: none;
+                    margin: 0 !important;
+                    &:focus {
+                        border-bottom: transparent !important;
+                        box-shadow: none !important;
+                    }
+                }
+                .cus-close {
+                    display: none !important;
+                    align-items: center;
+                    display: flex;
+                    .cancleModal {
+                        cursor: pointer;
+                        border: none;
+                        width: 25px;
+                        height: 25px;
+                        // background: url('../../../assets/close.svg');
+                    }
+                }
+            }
+            .deskClose {
+                background: black;
+                opacity: 0.7;
+                color: #fff;
+                font-size: 26px;
+                font-weight: 500;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 30px;
+                .cancleModal {
+                    cursor: pointer;
+                    border: none;
+                    width: 25px;
+                    height: 25px;
+                    // background: url('../../../assets/close.svg');
+                    transform: scale(1.75);
+                    background-repeat: no-repeat;
+                    background-position: 0 4px;
+                }
+            }
+            .bank-list {
+                max-height: 300px;
+                min-height: 100px;
+                overflow: auto;
+                margin: 0;
+                padding: 0;
+                .list-item {
+                    list-style: none;
+                    padding: 16px 35px;
+                    display: flex;
+                    text-align: left;
+                    img {
+                        height: 25px;
+                        width: 25px;
+                        min-width: 25px;
+                        margin-right: 20px;
+                    }
+                    span {
+                        display: inline-flex;
+                    }
+                    &:hover {
+                        background: #d8d8d8;
+                        color: white;
+                    }
+                }
+                .no-result {
+                    padding: 20px;
+                    .msg-box {
+                        padding: 16px 35px;
+                        .line {
+                            width: 100px;
+                            border: 1.5px solid #E1E1E1;
+                            margin: 50px auto;
+                        }
+                        .not-my-bank {
+                            margin-top: 50px;
+                            margin-bottom: 50px;
+                            /* The container */
+                            .label-text {
+                                display: block;
+                                position: relative;
+                                text-align: center;
+                                margin: 0 auto 12px;
+                                width: 190px;
+                                cursor: pointer;
+                                font-size: 16px;
+                                color: #333;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none;
+                            }
+                            /* Hide the browser's default checkbox */
+                            .label-text input {
+                                position: absolute;
+                                opacity: 0;
+                                cursor: pointer;
+                                height: 0;
+                                width: 0;
+                            }
+                            /* Create a custom checkbox */
+                            .checkmark {
+                                position: absolute;
+                                top: 3px;
+                                left: -14px;
+                                height: 18px;
+                                width: 18px;
+                                background-color: #fff;
+                                border: 2px solid #4A4A4A;
+                            }
+                            /* On mouse-over, add a grey background color */
+                            .label-text:hover input~.checkmark {
+                                background-color: #ccc;
+                            }
+                            /* When the checkbox is checked, add a blue background */
+                            .label-text input:checked~.checkmark {
+                                background-color: transparent;
+                            }
+                            /* Create the checkmark/indicator (hidden when not checked) */
+                            .checkmark:after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                            }
+                            /* Show the checkmark when checked */
+                            .label-text input:checked~.checkmark:after {
+                                display: block;
+                            }
+                            /* Style the checkmark/indicator */
+                            .label-text .checkmark:after {
+                                left: 6px;
+                                top: 0px;
+                                width: 5px;
+                                height: 13px;
+                                border: solid gray;
+                                border-width: 0 3px 3px 0;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .active {
+        background: #d8d8d8;
+        color: white;
+    }
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: none; // border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #D8D8D8;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(179, 177, 177);
+}
+
+@media screen and (max-width: 640px) {
+    .select-wrapper-box {
+        .cus-select-wrapper {
+            .list-container {
+                height: 100vh;
+                position: absolute;
+                width: 100%;
+                top: 0;
+                .search-box {
+                    .cus-close {
+                        display: flex !important;
+                    }
+                }
+                .bank-list {
+                    max-height: 70%;
+                }
+                .deskClose {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+}
